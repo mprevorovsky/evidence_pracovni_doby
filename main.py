@@ -1,12 +1,16 @@
 import requests
 import sys
+import calendar_api
+
 
 #date = sys.argv[1]
 date = "2025-05-01"
 month = date[5:7].lstrip("0")
-SVATKY_API_URL = f"https://svatkyapi.cz/api/day/{date}/interval/31"
+api_url = calendar_api.get_calendar_api_url_month("005", "2025")
+print(api_url)
 
-response = requests.get(SVATKY_API_URL)
+
+response = requests.get(api_url)
 response.raise_for_status()
 
 days = [day for day in response.json() if day["monthNumber"] == month]
