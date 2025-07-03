@@ -4,10 +4,10 @@ import calendar_api
 
 
 #date = sys.argv[1]
-date = "2025-05-01"
+date = "2025-06-01"
 month = date[5:7].lstrip("0")
-api_url = calendar_api.get_calendar_api_url_month("005", "2025")
-print(api_url)
+api_url = calendar_api.get_calendar_api_url_month("06", "2025")
+#print(api_url)
 
 
 response = requests.get(api_url)
